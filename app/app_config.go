@@ -71,7 +71,10 @@ import (
 	ibcexported "github.com/cosmos/ibc-go/v8/modules/core/exported"
 	"google.golang.org/protobuf/types/known/durationpb"
 
+	todomodulev1 "todo-exercise/api/todoexercise/todo/module"
 	todoexercisemodulev1 "todo-exercise/api/todoexercise/todoexercise/module"
+	_ "todo-exercise/x/todo/module" // import for side-effects
+	todomoduletypes "todo-exercise/x/todo/types"
 	_ "todo-exercise/x/todoexercise/module" // import for side-effects
 	todoexercisemoduletypes "todo-exercise/x/todoexercise/types"
 	// this line is used by starport scaffolding # stargate/app/moduleImport
@@ -112,6 +115,7 @@ var (
 		circuittypes.ModuleName,
 		// chain modules
 		todoexercisemoduletypes.ModuleName,
+		todomoduletypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/initGenesis
 	}
 
@@ -137,6 +141,7 @@ var (
 		ibcfeetypes.ModuleName,
 		// chain modules
 		todoexercisemoduletypes.ModuleName,
+		todomoduletypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/beginBlockers
 	}
 
@@ -156,6 +161,7 @@ var (
 		ibcfeetypes.ModuleName,
 		// chain modules
 		todoexercisemoduletypes.ModuleName,
+		todomoduletypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/endBlockers
 	}
 
@@ -308,6 +314,10 @@ var (
 			{
 				Name:   todoexercisemoduletypes.ModuleName,
 				Config: appconfig.WrapAny(&todoexercisemodulev1.Module{}),
+			},
+			{
+				Name:   todomoduletypes.ModuleName,
+				Config: appconfig.WrapAny(&todomodulev1.Module{}),
 			},
 			// this line is used by starport scaffolding # stargate/app/moduleConfig
 		},
