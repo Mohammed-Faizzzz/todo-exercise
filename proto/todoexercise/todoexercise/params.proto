@@ -1,0 +1,15 @@
+syntax = "proto3";
+package todoexercise.todoexercise;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+
+option go_package = "todo-exercise/x/todoexercise/types";
+
+// Params defines the parameters for the module.
+message Params {
+  option (amino.name) = "todoexercise/x/todoexercise/Params";
+  option (gogoproto.equal) = true;
+
+  
+}
