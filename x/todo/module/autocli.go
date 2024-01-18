@@ -47,9 +47,9 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 				},
 				{
 					RpcMethod:      "UpdateTask",
-					Use:            "update-task [id] [title] [description]",
+					Use:            "update-task [id] [title] [description] [completed]",
 					Short:          "Update task",
-					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "id"}, {ProtoField: "title"}, {ProtoField: "description"}},
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "id"}, {ProtoField: "title"}, {ProtoField: "description"}, {ProtoField: "completed"}},
 				},
 				{
 					RpcMethod:      "DeleteTask",

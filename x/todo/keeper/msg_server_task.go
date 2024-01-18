@@ -17,6 +17,7 @@ func (k msgServer) CreateTask(goCtx context.Context, msg *types.MsgCreateTask) (
 		Creator:     msg.Creator,
 		Title:       msg.Title,
 		Description: msg.Description,
+		Completed:   false,
 	}
 
 	id := k.AppendTask(
@@ -37,6 +38,7 @@ func (k msgServer) UpdateTask(goCtx context.Context, msg *types.MsgUpdateTask) (
 		Id:          msg.Id,
 		Title:       msg.Title,
 		Description: msg.Description,
+		Completed:   msg.Completed,
 	}
 
 	// Checks that the element exists

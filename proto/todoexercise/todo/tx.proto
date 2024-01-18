@@ -45,6 +45,7 @@ message MsgCreateTask {
   string creator     = 1;
   string title       = 2;
   string description = 3;
+  bool completed = 4;
 }
 
 message MsgCreateTaskResponse {
@@ -57,6 +58,7 @@ message MsgUpdateTask {
   uint64 id          = 2;
   string title       = 3;
   string description = 4;
+  bool completed = 5;
 }
 
 message MsgUpdateTaskResponse {}

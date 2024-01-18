@@ -13,6 +13,7 @@ func NewMsgCreateTask(creator string, title string, description string) *MsgCrea
 		Creator:     creator,
 		Title:       title,
 		Description: description,
+		Completed:   false,
 	}
 }
 
@@ -26,12 +27,13 @@ func (msg *MsgCreateTask) ValidateBasic() error {
 
 var _ sdk.Msg = &MsgUpdateTask{}
 
-func NewMsgUpdateTask(creator string, id uint64, title string, description string) *MsgUpdateTask {
+func NewMsgUpdateTask(creator string, id uint64, title string, description string, completed bool) *MsgUpdateTask {
 	return &MsgUpdateTask{
 		Id:          id,
 		Creator:     creator,
 		Title:       title,
 		Description: description,
+		Completed:   completed,
 	}
 }
 
