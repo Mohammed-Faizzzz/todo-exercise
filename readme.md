@@ -46,7 +46,11 @@ To manage your tasks using the command line interface (CLI), follow these comman
      ```
 
 3. **Edit a Task:**
-   - To edit a task, use the following command:
+   - To edit a task, use the following command (Current Version):
+     ```
+     todo-exercised tx todo update-task [task-id] "[new-title]" "[new-description]" --from [user] --chain-id [chain-id]
+     ```
+   - To edit a task, use the following command (New Version *Coming Soon*):
      ```
      todo-exercised tx todo update-task [task-id] "[new-title]" "[new-description]" [completed-status] --from [user] --chain-id [chain-id]
      ```
